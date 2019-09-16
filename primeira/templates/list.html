@@ -1,0 +1,30 @@
+{% extends 'primeira.html' %}
+{% block conteudo %}  
+    <table border="table">
+
+        <tr>
+            <th>Id:</th>
+            <th>Nome:</th>
+            <th>Categoria: </th>
+            <th>Cliente:</th>
+          
+            
+        </tr>
+        
+    {%for produto in produtos %}
+        <tr>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.categoria}}</td>
+            <td>{{produto.cliente}}</td>
+          
+    
+            <td><a href="/primeira/produto/{{produto.id}}/">Ver</a></td>
+            <td><a href="/primeira/excluir/{{produto.id}}/">Apagar</a></td>
+            <td><a href="/primeira/editar/{{produto.id}}/">Editar</a></td>
+        </tr>
+               
+    {% endfor %}
+</table>       
+
+       
+{% endblock %}
