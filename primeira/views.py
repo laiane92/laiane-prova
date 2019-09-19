@@ -10,6 +10,7 @@ def produto_list (request):
     produtos=Produto.objects.all()
     return render(request, 'list.html', {'produtos': produtos})
 
+    
 def produto_show(request, produto_id):
     produto=Produto.objects.get(pk=produto_id)
     return render(request, 'show.html', {'produto':produto})
@@ -47,3 +48,5 @@ def editar_produto (request, produto_id):
          form = ProdutoForm(instance = produto)
          return render (request, 'editar.html', {'form':form, 'produto_id': produto_id})
              
+
+
